@@ -6,15 +6,25 @@ namespace VS_VCS_Prac
     public partial class TestForm : Form
     {
         String ArithOp;
+        CheckBox current;
         public TestForm()
         {
             ArithOp = "";
             InitializeComponent();
         }
-
+        private void sync_checkbox(CheckBox checkbox) {
+            if (this.current == null) {
+                this.current = checkbox;
+            }
+            else
+            {
+                this.current.Checked = false;
+                this.current = checkbox;
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            // main functionality
+            // main functionality  
             bool errorFlag=false;
             string result="";
             float numericResult=0.0f;
@@ -55,6 +65,7 @@ namespace VS_VCS_Prac
             if (checkBox1.Checked)
             {
                 this.ArithOp = "+";
+                sync_checkbox(checkBox1);
             }
         }
 
@@ -63,6 +74,7 @@ namespace VS_VCS_Prac
             if (checkBox2.Checked)
             {
                 this.ArithOp = "-";
+                sync_checkbox(checkBox2);
             }
         }
 
@@ -71,6 +83,7 @@ namespace VS_VCS_Prac
             if (checkBox3.Checked)
             {
                 this.ArithOp = "*";
+                sync_checkbox(checkBox3);
             }
         }
 
@@ -79,6 +92,7 @@ namespace VS_VCS_Prac
             if (checkBox4.Checked)
             {
                 this.ArithOp = "/";
+                sync_checkbox(checkBox4);
             }
         }
 
