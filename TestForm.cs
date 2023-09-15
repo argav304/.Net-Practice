@@ -14,6 +14,7 @@ namespace VS_VCS_Prac
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // main functionality
             bool errorFlag=false;
             string result="";
             float numericResult=0.0f;
